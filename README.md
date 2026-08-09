@@ -2,6 +2,15 @@
 
 Standalone Okami Designs LED wall planning tool. Fully **client-side** (math, canvas preview, jsPDF export) — no Node API.
 
+## Pages
+
+| Path | Role |
+|------|------|
+| `/` (`index.html`) | App **landing page** — what the main Okami site links to |
+| `/app.html` | The actual tool UI |
+
+Flow: main site Tools → this host `/` → **Open Calculator** → `app.html`.
+
 ## Local
 
 ```bash
