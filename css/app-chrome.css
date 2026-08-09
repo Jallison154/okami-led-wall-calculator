@@ -1,0 +1,108 @@
+/* Compact header/footer chrome for standalone Okami apps */
+
+.okami-app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(51, 51, 51, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 106, 45, 0.25);
+}
+
+.okami-app-header__inner {
+    max-width: var(--okami-header-container-max-width);
+    margin: 0 auto;
+    padding: var(--okami-header-padding-y) var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    min-height: var(--okami-header-height);
+}
+
+.okami-app-header__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.okami-app-header__logo {
+    display: block;
+    height: var(--okami-nav-logo-max-height);
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+.okami-app-header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.okami-app-header__link {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: var(--okami-nav-link-size);
+    font-weight: 600;
+    letter-spacing: var(--okami-nav-link-spacing);
+    text-transform: uppercase;
+    transition: color var(--transition-fast);
+}
+
+.okami-app-header__link:hover {
+    color: var(--accent-color);
+}
+
+.okami-app-header__link--accent {
+    padding: var(--okami-nav-contact-padding-y) var(--okami-nav-contact-padding-x);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-sm);
+    color: var(--accent-color);
+}
+
+.okami-app-header__link--accent:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.okami-app-main {
+    min-height: calc(100dvh - var(--okami-header-height) - 72px);
+}
+
+.okami-app-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--accent-bg);
+    padding: var(--space-5) var(--space-5);
+}
+
+.okami-app-footer__inner {
+    max-width: var(--okami-header-container-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    color: var(--secondary-text);
+    font-size: 13px;
+}
+
+.okami-app-footer a {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.okami-app-footer a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 640px) {
+    .okami-app-header__logo {
+        height: var(--okami-nav-logo-max-height-mobile);
+    }
+
+    .okami-app-header__inner {
+        padding-inline: var(--space-4);
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "okami-led-wall-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Okami LED Video Wall Calculator — standalone static app",
+  "scripts": {
+    "start": "npx --yes serve -l 3082 .",
+    "docker:build": "docker build -t okami-led-wall-calculator .",
+    "docker:run": "docker run --rm -p 3082:80 okami-led-wall-calculator"
+  }
+}

@@ -1,0 +1,122 @@
+/**
+ * Okami Designs — design tokens (static snapshot)
+ * Manual re-sync from OkamiDesignsWebsite/styles.css :root when the brand look changes.
+ */
+
+:root {
+    /* Layout */
+    --okami-header-height: 64px;
+    --okami-header-padding-y: 6px;
+    --okami-header-container-max-width: 1400px;
+    --okami-nav-logo-max-height: 48px;
+    --okami-nav-logo-max-height-mobile: 40px;
+    --okami-nav-link-size: 11.5px;
+    --okami-nav-link-spacing: 0.06em;
+    --okami-nav-gap: 16px;
+    --okami-nav-contact-padding-y: 6px;
+    --okami-nav-contact-padding-x: 14px;
+    --okami-nav-contact-font-size: 11.5px;
+
+    /* Colors (main site) */
+    --primary-bg: #333333;
+    --secondary-bg: #2a2a2a;
+    --accent-bg: #1a1a1a;
+    --primary-text: #e6e6e6;
+    --secondary-text: #b0b0b0;
+    --accent-color: #FF6A2D;
+    --accent-secondary: #ff8833;
+    --danger-color: #ff4444;
+    --warning-color: #ffaa00;
+    --gradient-primary: linear-gradient(135deg, #FF6A2D 0%, #ff8833 100%);
+    --gradient-secondary: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    --glass-bg: rgba(255, 106, 45, 0.1);
+    --glass-border: rgba(255, 106, 45, 0.2);
+
+    /* Typography stacks */
+    --font-body: 'Montserrat', 'Inter', system-ui, sans-serif;
+    --font-display: 'Orbitron', 'Montserrat', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* Radii / motion */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: var(--font-body);
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .okami-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+code, pre, .okami-mono, .okami-status {
+    font-family: var(--font-mono);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+.okami-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 10px 18px;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-sm);
+    background: var(--accent-color);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.okami-btn:hover {
+    background: #fff;
+    color: var(--accent-color);
+}
+
+.okami-btn--ghost {
+    background: transparent;
+    color: var(--accent-color);
+}
+
+.okami-btn--ghost:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
