@@ -144,6 +144,9 @@
         document.getElementById('custom-format-height')?.addEventListener('input', updateAll);
 
         document.getElementById('led-reset')?.addEventListener('click', () => {
+            if (!window.confirm('Reset the calculator? This clears the wall size, cabinet, pitch, project name, and every advanced setting back to defaults.')) {
+                return;
+            }
             resetCalculator();
             updateAll();
         });

@@ -1,0 +1,38 @@
+/*
+ * LED Wall Calculator — targeted UX refinements.
+ * Kept separate from css/okami-site-styles.css (a synced snapshot from the
+ * main site) so a future re-sync won't clobber these. Scoped to this app's
+ * own classes/IDs only.
+ */
+
+/* Desktop (>=1200px): the sidebar's compact "Summary" card sits beside the
+   full "Project Summary" cards and repeats almost the same figures. Trim it
+   to the two values the big cards don't already show on their own —
+   cabinet type/pitch and port fill % — instead of showing everything twice. */
+@media (min-width: 1200px) {
+    .sidebar > .led-grid-summary .led-summary-line:nth-child(2),
+    .sidebar > .led-grid-summary .led-summary-line:nth-child(3),
+    .sidebar > .led-grid-summary .led-summary-line:nth-child(4),
+    .sidebar > .led-grid-summary .led-summary-line:nth-child(5),
+    .sidebar > .led-grid-summary .led-summary-line:nth-child(7) {
+        display: none;
+    }
+}
+
+/* Reset Calculator is destructive and irreversible (wipes every field,
+   including the project name) but shares equal visual weight with Advanced
+   Settings — a view toggle used constantly — right next to it. Downgrade it
+   to a quieter style so the button people reach for most isn't sitting
+   next to a look-alike that erases their work. */
+.led-config-footer-primary #led-reset {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--secondary-text);
+    font-weight: 600;
+}
+
+.led-config-footer-primary #led-reset:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--primary-text);
+}
