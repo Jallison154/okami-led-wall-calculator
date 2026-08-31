@@ -5,6 +5,16 @@
  * own classes/IDs only.
  */
 
+/* The shared okami-site-styles.css gives `.main` a margin-top equal to the
+   header height, written for pages with a position:fixed header that needs
+   flow content pushed clear of it. This app's header is position:sticky,
+   which already reserves its own space in normal flow — so that margin was
+   pure dead space stacked on top of it, pushing the whole tool down an
+   extra ~60px for nothing. */
+.led-calculator-page .main {
+    margin-top: 0;
+}
+
 /* Desktop (>=1200px): the sidebar's compact "Summary" card sits beside the
    full "Project Summary" cards and repeats almost the same figures. Trim it
    to the two values the big cards don't already show on their own —

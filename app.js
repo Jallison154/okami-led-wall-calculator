@@ -296,12 +296,19 @@
         if (!toggle) {
             return;
         }
+        const stateLabel = document.getElementById('show-cabinet-numbers-state');
 
         const stored = sessionStorage.getItem(CABINET_NUMBERS_SESSION_KEY);
         toggle.checked = stored === null ? DEFAULTS.showCabinetNumbers : stored === 'true';
+        if (stateLabel) {
+            stateLabel.textContent = toggle.checked ? 'On' : 'Off';
+        }
 
         toggle.addEventListener('change', () => {
             sessionStorage.setItem(CABINET_NUMBERS_SESSION_KEY, String(toggle.checked));
+            if (stateLabel) {
+                stateLabel.textContent = toggle.checked ? 'On' : 'Off';
+            }
             hideCabinetTooltip();
             renderPreview(getState());
         });
@@ -884,6 +891,10 @@
         if (showNumbers) {
             showNumbers.checked = DEFAULTS.showCabinetNumbers;
             sessionStorage.setItem(CABINET_NUMBERS_SESSION_KEY, String(DEFAULTS.showCabinetNumbers));
+            const stateLabel = document.getElementById('show-cabinet-numbers-state');
+            if (stateLabel) {
+                stateLabel.textContent = DEFAULTS.showCabinetNumbers ? 'On' : 'Off';
+            }
         }
         document.querySelectorAll('[name="display-mode"]').forEach((input) => {
             input.checked = input.value === DEFAULTS.displayType;

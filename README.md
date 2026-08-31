@@ -4,12 +4,7 @@ Standalone Okami Designs LED wall planning tool. Fully **client-side** (math, ca
 
 ## Pages
 
-| Path | Role |
-|------|------|
-| `/` (`index.html`) | App **landing page** — what the main Okami site links to |
-| `/app.html` | The actual tool UI |
-
-Flow: main site Tools → this host `/` → **Open Calculator** → `app.html`.
+Single page — `/` (`index.html`) is the calculator itself. There's no separate landing page; the main Okami site's Tools link goes straight into the tool.
 
 ## Local
 
@@ -40,7 +35,7 @@ To **update**: re-pull and redeploy the stack from Portainer (or enable GitOps a
 
 | Path | Role |
 |------|------|
-| `index.html` | App shell |
+| `index.html` | App shell + calculator UI |
 | `app.js` | UI / DOM (from `led-wall-visualizer.js`) |
 | `engine/` | Portable calculator modules |
 | `vendor/jspdf.umd.min.js` | PDF export |
