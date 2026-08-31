@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  okami-led-wall-calculator:
+    build: .
+    container_name: okami-led-wall-calculator
+    ports:
+      # Container serves on 80 (nginx); host port defaults to 3082 so this can
+      # run alongside another site (e.g. port 80/443) on the same Docker host.
+      # Point your reverse proxy / Cloudflare Tunnel here.
+      - "${PORT:-3082}:80"
+    restart: unless-stopped
